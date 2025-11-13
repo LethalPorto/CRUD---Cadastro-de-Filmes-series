@@ -7,7 +7,6 @@ while True:
     print("="*30)
     print("            Menu")
     print("=" * 30, '\n')
-    print()
 
     while True:
         try:
@@ -31,3 +30,4 @@ while True:
     elif opcao == 0:
         print("Adeus!")
         break
+
