@@ -5,24 +5,32 @@ def adicionar(filmes_series):
     # Pegando os dados
     while True:
         titulo = input("Título: ")
+        if titulo == '':
+            print("Erro: Digite um título...")
+            continue
         tem = False
         for item in filmes_series:
             if item[0].lower().strip() == titulo.lower().strip():
                 tem = True
                 break
         if tem == True:
-            print("Esse filme/serie já existe...")
+            print("Erro: Esse filme/serie já existe...")
         else:
             break
-
-    genero = input("Gênero: ")
+    while True:
+        genero = input("Gênero: ")
+        if genero == '':
+            print("Erro: Digite um gênero...")
+            continue
+        else:
+            break
 
     while True:
         try:
             ano = int(input("Ano de Lançamento: "))
             break
         except ValueError:
-            print("Digite um número válido...")
+            print("Erro: Digite um número válido...")
 
     plataforma = input("Plataforma: ").strip()
 
