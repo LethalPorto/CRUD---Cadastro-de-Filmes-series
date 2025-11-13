@@ -29,8 +29,10 @@ def atualizar(filmes_series):
                         nova_lista = []
                         
                         if j == resposta:
+                            
                             for k in i:
                                 nova_lista.append(k)
+                                
                             nova_lista.remove(j)
                             novo_titulo = input("Informe o titulo novo: ")
                             nova_lista.insert(0, novo_titulo)
@@ -158,3 +160,4 @@ def atualizar(filmes_series):
         else:
             print("Informe um título valido.")
             continue
+
