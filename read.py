@@ -4,9 +4,9 @@
 # index 0 = Titulo  1 = Genero  2 = Ano  3 = Plataforma
 # se tem ele dá true (verdadeiro) caso contrario, mostra mensagem de erro
 def mostrar_filme_serie(filme):
+    print('-' * 80)
     print(f"{filme[0]} ({filme[2]})")
     print(f"Gênero: {filme[1]}   Plataforma: {filme[3]}")
-    print()
 
 
 def ler(filme_series):
@@ -28,7 +28,7 @@ def ler(filme_series):
         elif opcao == 1:
             for filme in filme_series:
                 mostrar_filme_serie(filme)
-            print()
+            print('-' * 80)
         elif opcao == 2:
             tem = False
             plataforma = input("digite o nome do plataforma: ")
@@ -41,7 +41,7 @@ def ler(filme_series):
                 print("Erro: Não há filmes/series nessa plataforma...")
 
 
-            print()
+            print('-' * 80)
 
         elif opcao == 3:
             tem = False
@@ -54,7 +54,7 @@ def ler(filme_series):
                         mostrar_filme_serie(filme)
                 if tem == False:
                     print("Erro: Não há filmes/series nessa faxa de ano...")
-                print()
+                print('-' * 80)
             if ano1 < ano2:
                 for filme in filme_series:
                     if filme[2] <= ano2 and filme[2] >= ano1:
@@ -62,7 +62,7 @@ def ler(filme_series):
                         mostrar_filme_serie(filme)
                 if tem == False:
                     print("Erro: Não há filmes/series nessa faxa de ano...")
-                print()
+                print('-' * 80)
 
         elif opcao == 4:
             tem = False
@@ -73,7 +73,7 @@ def ler(filme_series):
                     mostrar_filme_serie(filme)
             if tem == False:
                  print("Erro: Não há filmes/series com esse gênero...")
-            print()
+            print('-' * 80)
                     
         elif opcao == 5:
             tem = False
@@ -84,7 +84,7 @@ def ler(filme_series):
                     mostrar_filme_serie(filme)
             if tem == False:
                 print("Erro: Não há filmes/series com esse nome...")
-            print()
+            print('-' * 80)
                     
 if __name__ == "__main__":
     ler ([['Teste','qualquer', 2000,'Prime Video'],['Up','Desenho',2010,'Netflix',]])
