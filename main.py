@@ -3,7 +3,7 @@ import app_filmes
 # Se não salvou nada ainda
 filme_series = []
 def limpar():
-    print("\n" * 100)
+    print("\n" * 50)
 
 if __name__ == '__main__':
     while True:
