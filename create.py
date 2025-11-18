@@ -49,3 +49,7 @@ def adicionar(filmes_series):
 
 if __name__ == "__main__":
     adicionar([['teste', 'qualquer', 2025, 'exemplo']])
+
+if __name__ == "__main__":
+    adicionar([['teste', 'qualquer', 2025, 'exemplo']])
+
