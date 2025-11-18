@@ -3,10 +3,13 @@
 
 def atualizar(filmes_series):
     while True:
+        print("-" * 50)
+        print("             ATUALIZAR")
+        print("-" * 50)
         print(f"Filmes já adicionados:")
         #mecanismo de print, ele busca cada titulo, genero... em um loop for na matriz por indice
         for filme in filmes_series:
-            print(f"{filme[0]} ({filme[2]}) - Gênero: {filme[1]}   Plataforma: {filme[3]}")
+            print(f"{filme[0]} ({filme[2]}) - Gênero: {filme[1]}   Plataforma: {filme[3]}","\n")
         #Pedindo Titulo do filme para a localização pelo titulo
         resposta = input("Coloque o titulo do filme que deseja editar (1 - Sair):  ").lower()
         #saindo e voltando pro menu
@@ -16,15 +19,18 @@ def atualizar(filmes_series):
         #nesse elif ele confere se a resposta seja diferente de nada ele passa para o resto do codigo
         elif resposta != "":
             T_G_A_P = int(input("O que você deseja editar?: [1] Titulo [2] Genêro [3] Ano de Lançamento [4] Plateforma: "))
+            print("-" * 50)
             #se T_G_A_P igual a 1 vai proceguir
             if T_G_A_P == 1:
                 #vou utilizar essa variavel para quebrar o loop mais externo do for aninhado
                 a = False
+                b = False
                 #primeiro for percorrendo a lista de listas
                 for i in filmes_series:
                     #utilizando a variavel que vai ser declarado como True talvez mais a frente para a quebra do for
                     if a == True:
                         break
+
                     #for que percorre a lista encontrada no for externo    
                     for j in i:
                         nova_lista = []
@@ -36,6 +42,7 @@ def atualizar(filmes_series):
                             #removendo titulo errado da lsita    
                             nova_lista.remove(j)
                             novo_titulo = input("Informe o titulo novo: ")
+                            print("-"*50)
                             #colocando novo titulo na mesma pocição de antes
                             nova_lista.insert(0, novo_titulo)
                             #pegando posição da lista antiga
@@ -45,12 +52,15 @@ def atualizar(filmes_series):
                             #colocando lista nova  na exata mesma posição da lista antiga
                             filmes_series.insert(position, nova_lista)
                             print(f"Veja se a lista foi atualizada corretamente:")
+                            print("-" * 50)
                             # sistema de print
                             for filme in filmes_series:
-                                print(f"{filme[0]} ({filme[2]}) - Gênero: {filme[1]}   Plataforma: {filme[3]}")
+                                print(f"{filme[0]} ({filme[2]}) - Gênero: {filme[1]}   Plataforma: {filme[3]}","\n")
+                            print("-" * 50)
                             #aqui esta pedindo se a informação ataulziada esta correta
                             r_s_n = int(input("[1] Sim  [2] Não: "))
-                            
+                            print("-" * 50)
+
                             if r_s_n == 1:
                                 #se sim vai quebrar o for aninhado
                                 a = True
@@ -58,22 +68,27 @@ def atualizar(filmes_series):
                                 #se não vai retomar o processo e como guardado vai adicionar a lista antiga sendo uma medida de segurança
                                 filmes_series.remove(nova_lista)
                                 filmes_series.append(i)
+                                print("-" * 50)
+                                print("Reinciando...")
+                                print("-" * 50)
                                 continue
-                                
+                if b == False:
+                    print("ERRO: Informe um Titulo valido!!!")
+
             elif T_G_A_P == 2:
-                b = False
-                
+                c = False
+                d = False
                 for i in filmes_series:
                     
-                    if b == True:
+                    if c == True:
                         break
-                        
+
                     for j in i:
                         
                         if j == resposta:
                             novo_genero = input("Informe o novo gênero do filme: ")
                             nova_lista2 = []
-                            
+                            print("-" * 50)
                             for k in i:
                                 nova_lista2.append(k)
                                 
@@ -85,31 +100,37 @@ def atualizar(filmes_series):
                             print(f"Veja se a lista foi atualizada corretamente:")
                             
                             for filme in filmes_series:
-                                print(f"{filme[0]} ({filme[2]}) - Gênero: {filme[1]}   Plataforma: {filme[3]}")
-                                
+                                print(f"{filme[0]} ({filme[2]}) - Gênero: {filme[1]}   Plataforma: {filme[3]}","\n")
+                            print("-" * 50,"\n")
                             r_s_n2 = int(input("[1] Sim  [2] Não: "))
-                            
+                            print("-" * 50)
                             if r_s_n2 == 1:
-                                b = True
+                                c = True
                             else:
                                 filmes_series.remove(nova_lista2)
                                 filmes_series.append(i)
+                                print("=" * 50)
+                                print("Reinciando...")
+                                print("=" * 50)
                                 continue
-                                
+                if d == False:
+                    print("ERRO: Informe um gênero correto!!!")
+
             elif T_G_A_P == 3:
-                c = False
-                
+                e = False
+                f = False
                 for i in filmes_series:
                     
-                    if c == True:
+                    if e == True:
                         break
-                        
+
                     for j in i:
                         
                         if j == resposta:
+                            f = True
                             novo_Ano = input("Informe o novo ano de lançamento do filme: ")
                             nova_lista3 = []
-                            
+                            print("-" * 50, "\n")
                             for k in i:
                                 nova_lista3.append(k)
                                 
@@ -122,28 +143,34 @@ def atualizar(filmes_series):
                             
                             for filme in filmes_series:
                                 print(f"{filme[0]} ({filme[2]}) - Gênero: {filme[1]}   Plataforma: {filme[3]}")
-                                
+                            print("-" * 50, "\n")
                             r_s_n3 = input("[1] Sim  [2] Não: ")
-                            
+                            print("-" * 50)
                             if r_s_n3 == 1:
-                                c = True
+                                e = True
                             else:
                                 filmes_series.remove(nova_lista3)
                                 filmes_series.append(i)
+                                print("=" * 50)
+                                print("Reinciando...")
+                                print("=" * 50)
                                 continue
+                if f == False:
+                    print("ERRO: Informe um ano valido!!!")
                                 
             elif T_G_A_P == 4:
-                d = False
-                
+                g = False
+                h = False
                 for i in filmes_series:
-                    if d == True:
+                    if g == True:
                         break
-                        
+
                     for j in i:
                         if j == resposta:
+                            h = True
                             nova_Plataforma = input("Informe a nova plataforma do filme: ")
                             nova_lista4 = []
-                            
+                            print("-" * 50, "\n")
                             for k in i:
                                 nova_lista4.append(k)
                                 
@@ -156,17 +183,21 @@ def atualizar(filmes_series):
                             
                             for filme in filmes_series:
                                 print(f"{filme[0]} ({filme[2]}) - Gênero: {filme[1]}   Plataforma: {filme[3]}")
-                                
+                            print("-" * 50, "\n")
                             r_s_n4 = input("[1] Sim  [2] Não: ")
-                            
+                            print("-" * 50)
                             if r_s_n4 == 1:
-                                d = True
+                                g = True
                             else:
                                 filmes_series.remove(nova_lista4)
                                 filmes_series.append(i)
+                                print("=" * 50)
+                                print("Reinciando...")
+                                print("=" * 50)
                                 continue
+                if h == False:
+                    print("ERRO: Informe um nome de plataforma valido!!!")
+            else:
+                print("ERRO: Informe um valor valido!!!")
         else:
-            print("Informe um título valido.")
-            continue
-
-
+            print("ERRO: Informe um Titulo valido!!!")
