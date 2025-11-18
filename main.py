@@ -2,9 +2,12 @@
 import app_filmes
 # Se não salvou nada ainda
 filme_series = []
+def limpar():
+    print("\n" * 100)
 
 if __name__ == '__main__':
     while True:
+        limpar()
         print("="*30)
         print("            Menu")
         print("=" * 30)
@@ -12,7 +15,7 @@ if __name__ == '__main__':
 
         while True:
             try:
-                print("[1] Cadastrar filme/serie \n[2] Atualizar filme \n[3] Leitura dos filmes  \n[4] Deletar um filme \n[0] Sair\n")
+                print("[1] Cadastrar filme/serie \n[2] Atualizar filme/serie \n[3] Leitura dos filmes/series  \n[4] Deletar um filme/serie \n[0] Sair\n")
                 opcao = int(input("Opção: "))
                 if opcao < 0 or opcao > 4:
                     print('Erro: Digite apenas números entre 0 e 4...\n')
